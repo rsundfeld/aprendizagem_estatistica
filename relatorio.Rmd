@@ -3,7 +3,7 @@ title: "Nome do Projeto"
 author: |
    | Lucas de Miranda Oliveira\thanks{Número USP: }
    | Pedro Henrique Sebe Rodrigues\thanks{Número USP: }
-   | Renata Massami Hirota\thanks{Número USP: }
+   | Renata Massami Hirota\thanks{Número USP: 7165654}
    | Rodolfo Riani Sundfeld\thanks{Número USP: }
    | Rubens Santos Andrade Filho\thanks{Número USP: 10370336}
 date: "`r stringr::str_to_sentence(format(Sys.time(), '%B de %Y'))`"
@@ -49,9 +49,50 @@ bibliography: ref.bib
 
 # Problema 
 
+A partir de dados de boletins de ocorrência (BO) da Secretaria de Seguraça Pública (SSP) do estado de São Paulo, o objetivo deste estudo é prever a tipificação dos crimes reportados, visando, dessa forma, poder identificar que tipos de crimes deveriam receber maior atenção por parte do policiamento.
+
 # Conjunto de dados
 
-dimensão, nome das variáveis com sua descrição
+Boletins de ocorrência na Grande São Paulo.
+
+```{r dados, echo=FALSE}
+library(magrittr)
+tibble::tribble(
+                     ~variavel,                                                    ~descricao,
+                "ID_DELEGACIA", "Código da delegacia responsável pelo registro da ocorrencia",
+           "NOME_DEPARTAMENTO",                      "Departamento responsável pelo registro",
+              "NOME_SECCIONAL",               "Delegacia Seccional responsável pelo registro",
+              "NOME_DELEGACIA",                         "Delegacia responsável pelo registro",
+                      "CIDADE",                                          "Cidade de Registro",
+                      "ANO_BO",                                           "Ano da ocorrencia",
+                      "NUM_BO",                                                "Número do BO",
+      "NOME_DEPARTAMENTO_CIRC",                               "Departamento de Circunscrição",
+         "NOME_SECCIONAL_CIRC",                                  "Seccional de Circunscrição",
+         "NOME_DELEGACIA_CIRC",                                  "Delegacia de Circunscrição",
+         "NOME_MUNICIPIO_CIRC",                                  "Município de Circunscrição",
+               "DESCR_TIPO_BO",                                           "Tipo de Documento",
+          "DATA_OCORRENCIA_BO",                                          "Data da Ocorrência",
+          "HORA_OCORRENCIA_BO",                                          "Hora da Ocorrência",
+     "DATAHORA_COMUNICACAO_BO",                      "Data Hora da Comunicação da Ocorrência",
+                 "FLAG_STATUS",                                        "Status da Ocorrência",
+                     "RUBRICA",                             "Natureza jurídica da ocorrência",
+               "DESCR_CONDUTA",                                       "Conduta na Ocorrência",
+               "DESDOBRAMENTO",                                 "Desdobramento na Ocorrência",
+             "DESCR_TIPOLOCAL",                                               "Tipo de Local",
+          "DESCR_SUBTIPOLOCAL",                               "Descrição do subTipo de local",
+                  "LOGRADOURO",                                        "Logradouro dos fatos",
+           "NUMERO_LOGRADOURO",                              "Numero do Logradouro dos fatos",
+                    "LATITUDE",                                      "Latitude da Ocorrência",
+                   "LONGITUDE",                                     "Longitude da Ocorrência",
+           "DESCR_TIPO_PESSOA",                     "Qualificação do envolvido na ocorrência",
+           "FLAG_VITIMA_FATAL",                      "Condição do Autor / Vítma na corrência",
+                 "SEXO_PESSOA",                                                        "Sexo",
+                "IDADE_PESSOA",                                                       "Idade",
+                   "COR_CUTIS",                                                 "Cor da Pele"
+     ) %>% 
+  setNames(c("Variável", "Descrição")) %>% 
+  knitr::kable()
+```
 
 # Avaliação do problema
 
@@ -60,4 +101,6 @@ classificação ou regressão (?)
 
 # References
 
-Endereço da competição ou da página onde o problema está descrito 
+<!-- Endereço da competição ou da página onde o problema está descrito --> 
+
+[Crime Data in Brazil](https://www.kaggle.com/inquisitivecrow/crime-data-in-brazil)
