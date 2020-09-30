@@ -4,7 +4,7 @@ author: |
    | Lucas de Miranda Oliveira\thanks{Número USP: }
    | Pedro Henrique Sebe Rodrigues\thanks{Número USP: }
    | Renata Massami Hirota\thanks{Número USP: 7165654}
-   | Rodolfo Riani Sundfeld\thanks{Número USP: }
+   | Rodolfo Riani Sundfeld\thanks{Número USP: 8535770}
    | Rubens Santos Andrade Filho\thanks{Número USP: 10370336}
 date: "`r stringr::str_to_sentence(format(Sys.time(), '%B de %Y'))`"
 lang: pt-BR
@@ -49,7 +49,7 @@ bibliography: ref.bib
 
 # Problema 
 
-A partir de dados de boletins de ocorrência (BO) da Secretaria de Seguraça Pública (SSP) do estado de São Paulo, o objetivo deste estudo é prever a tipificação dos crimes reportados, visando, dessa forma, poder identificar que tipos de crimes deveriam receber maior atenção por parte do policiamento.
+A partir de dados de boletins de ocorrência (BO) da Secretaria de Segurança Pública (SSP) do estado de São Paulo, o objetivo deste estudo é prever o horário dos crimes reportados, visando, dessa forma, identificar períodos do dia que possam necessitar de maior atenção por parte do policiamento, além de mapear a relação desta variável com as demais informações do crime, como características do local e da vítima. 
 
 # Conjunto de dados
 
@@ -96,8 +96,7 @@ tibble::tribble(
 
 # Avaliação do problema
 
-Supervisionado ou não supervisionado (?),
-classificação ou regressão (?)
+O problema será tratado como uma análise supervisionada de classificação multiclasse, uma vez que a variável de horário do suposto crime deverá ser dividida em quatro classes: manhã, tarde, noite e madrugada.
 
 # References
 
